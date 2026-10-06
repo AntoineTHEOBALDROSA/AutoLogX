@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "X — Connexion automatique",
+  "version": "1.0.0",
+  "description": "Automatise Moodle IP Paris, SynapseS et Zimbra avec le remplissage des identifiants par Firefox.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "x-auto-login@local.polytechnique",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://moodle.ip-paris.fr/*",
+    "https://synapses.polytechnique.fr/*",
+    "https://webmail.polytechnique.fr/*",
+    "https://egide.polytechnique.fr/idp/*"
+  ],
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [{
+    "matches": [
+      "https://moodle.ip-paris.fr/*",
+      "https://synapses.polytechnique.fr/*",
+      "https://webmail.polytechnique.fr/*",
+      "https://egide.polytechnique.fr/idp/*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }],
+  "action": {
+    "default_title": "X — Connexion automatique",
+    "default_popup": "popup.html",
+    "default_icon": "icon.svg"
+  },
+  "icons": { "48": "icon.svg", "96": "icon.svg" }
+}

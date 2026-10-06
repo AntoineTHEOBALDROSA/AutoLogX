@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion automatique</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header><img src="icon.svg" alt="" width="36" height="36"><div><h1>Connexion automatique</h1><p>Moodle · SynapseS · Webmail</p></div></header>
+  <fieldset>
+    <legend>Activer par service</legend>
+    <label><span>Moodle IP Paris</span><input type="checkbox" id="moodle"></label>
+    <label><span>SynapseS</span><input type="checkbox" id="synapses"></label>
+    <label><span>Webmail Zimbra</span><input type="checkbox" id="webmail"></label>
+  </fieldset>
+  <p id="status" role="status">Chargement…</p>
+  <div class="buttons"><button id="retry" type="button">Réessayer</button><button id="pause" type="button">Pause dans cet onglet</button></div>
+  <p class="hint">Firefox remplit les identifiants enregistrés. L’extension clique et valide. Aucun identifiant n’est enregistré par l’extension.</p>
+  <script src="popup.js"></script>
+</body>
+</html>
